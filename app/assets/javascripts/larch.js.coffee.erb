@@ -1,0 +1,16 @@
+#= require_tree ./larch
+
+Larch = Ember.Namespace.create()
+
+Ember.Application.initializer
+  name: 'larchInitalizer'
+  after: 'barbecueInitializer'
+
+  initialize: (container,application) ->
+    # FYI: store = container.lookup('store:main')
+    # FYI: adapter = container.lookup('adapter:application')
+    # container.register 'component:link-li', Barbecue.LinkLiComponent
+    console.debug 'Larch <%= Larch::VERSION %>'
+
+
+window.Larch = Larch    

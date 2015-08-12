@@ -1,4 +1,5 @@
 # Larch
+
 Ember.js tree component and its Rails server side.
 
 ## Compatibility
