@@ -1,0 +1,9 @@
+if isNew
+  = tree-node-title this treeLabel
+else
+  if contentType
+    link-to contentType linkedContent.id
+      = tree-node-title this treeLabel
+  else
+    link-to 'menu_item' this
+      = tree-node-title this treeLabel

@@ -1,0 +1,7 @@
+h1 Tree
+
+ul.list-group
+  = each node in view.roots
+    li
+      = node.title
+/  render 'children' view.roots

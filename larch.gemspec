@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   # BEWARE: higher versions of ember-rails may break Emblem compilation
   s.add_dependency "ember-rails",'0.16.2'
   s.add_dependency "emblem-rails"
+  s.add_dependency "jquery-cookie-rails"
 
-  s.add_development_dependency "sqlite3"  
+  s.add_development_dependency "sqlite3"
 end

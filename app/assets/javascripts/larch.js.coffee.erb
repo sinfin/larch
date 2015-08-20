@@ -1,4 +1,13 @@
-#= require_tree ./larch
+#= require jquery.cookie
+
+
+#= require_self
+#= require cookie_set
+#= require_tree ./helpers
+#= require_tree ./templates
+#= require_tree ./controllers
+#= require_tree ./components
+
 
 Larch = Ember.Namespace.create()
 
@@ -9,8 +18,8 @@ Ember.Application.initializer
   initialize: (container,application) ->
     # FYI: store = container.lookup('store:main')
     # FYI: adapter = container.lookup('adapter:application')
-    # container.register 'component:link-li', Barbecue.LinkLiComponent
+    container.register 'component:larch-tree', Larch.TreeComponent
     console.debug 'Larch <%= Larch::VERSION %>'
 
 
-window.Larch = Larch    
+window.Larch = Larch
