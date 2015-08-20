@@ -12,7 +12,7 @@ span{action 'toggleClosed'}
 /  else
   fa 'folder-o'
 
-render 'tree/title' this controller="menu_item"
+render 'tree/title' this controller="page"
 
 
 span.actions.pull-right

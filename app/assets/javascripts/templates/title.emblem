@@ -5,5 +5,5 @@ else
     link-to contentType linkedContent.id
       = tree-node-title this treeLabel
   else
-    link-to 'menu_item' this
+    link-to 'page' this
       = tree-node-title this treeLabel
