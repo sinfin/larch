@@ -23,13 +23,7 @@ span.actions.pull-right
       li
         a.create{ action "create" this bubbles=false} href="#" Category
       li
-        link-to 'Study' 'new_study' id
-      li
-        link-to 'Examination' 'new_examination' id
-      link-li
-        link-to 'Doctor' 'new_doctor' id
-      li
-        a.create{ action "createService" this bubbles=false } href="#" Service
+        link-to 'Page' 'pages.new' id
 
   unless fixed
     a.down-button{ action "moveDown" this bubbles=false}
