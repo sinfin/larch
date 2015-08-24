@@ -1,9 +1,9 @@
 module Larch
   module Model
     extend ActiveSupport::Concern
-    
+
     included do
-      has_ancestry orphan_strategy: :destroy, cache_depth: true      
+      has_ancestry orphan_strategy: :destroy, cache_depth: true
       acts_as_list scope: [:ancestry]
     end
 
@@ -18,4 +18,3 @@ module Larch
     end
   end
 end
-

@@ -1,5 +1,3 @@
 each child in model itemController='tree_node'
   render 'tree-node' child
-
-  unless child.isClosed
-    render 'children' child.children
+  render 'children' child.children

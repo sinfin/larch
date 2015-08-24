@@ -1,10 +1,7 @@
-h1 Tree
-
 ul.list-group
   render 'children' view.roots
 
-/    
+/
   = each node in view.roots
     li
       = node.title
-

@@ -1,6 +1,6 @@
 Larch.TreeNodeView = Ember.View.extend
   templateName: 'tree/node'
-  
+
   attributeBindings: ['draggable','style']
   classNameBindings: [ 'draggingOver:dragging-over','active']
   draggingOver: false
