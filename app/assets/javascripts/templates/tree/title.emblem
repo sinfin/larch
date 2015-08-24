@@ -1,9 +1,0 @@
-if isNew
-  = tree-node-title this treeLabel
-else
-  if contentType
-    link-to contentType linkedContent.id
-      = tree-node-title this treeLabel
-  else
-    link-to 'page' this
-      = tree-node-title this treeLabel

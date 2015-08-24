@@ -12,7 +12,13 @@ span{action 'toggleClosed'}
 /  else
   fa 'folder-o'
 
-render 'tree/title' this controller="page"
+/ TODO: GEM replace by generic code
+if isNew
+  = tree-node-title this treeNodeLabel
+else
+  link-to 'page' this
+    = tree-node-title this treeNodeLabel
+
 
 
 span.actions.pull-right
