@@ -1,0 +1,30 @@
+.tree-node {
+  font-size: 16px;  
+  min-height: 20px;
+
+  &.list-group-item.active {
+    background-color: lightgray; 
+    border: 1px solid #ddd;
+  }
+
+  &.dragging-over { 
+    background-color: lightgray; 
+  }
+
+  &.list-group-item:hover {
+    .actions { display: inline; }
+    background-color: #ddd;  
+  }
+
+  &.list-group-item.active:hover {
+    background-color: #ddd;  
+  }
+
+  .actions {
+    display: none;
+    .fa-trash:hover { color: red; }
+    .fa-plus-square:hover { color: green; }
+
+    .dropdown { display: inline; }
+  }
+}

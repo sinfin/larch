@@ -1,8 +1,8 @@
 # TODO: replace by component
 Larch.TreeNodeController = Ember.ObjectController.extend
-  # FIXME: not working - must be shared!      
+  # FIXME: not working - must be shared!
   closedItems: Larch.CookieSet.create(cookieName: 'tree-closed-items')
-  
+
   isClosed: (->
     id = @get('model.id')
     @get('closedItems').contains(id)
