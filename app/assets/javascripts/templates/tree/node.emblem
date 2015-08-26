@@ -1,3 +1,5 @@
+tree-node-indentation this
+
 span{action 'toggleClosed'}
   if children
     if isClosed
@@ -12,7 +14,6 @@ span{action 'toggleClosed'}
 /  else
   fa 'folder-o'
 
-tree-node-indentation this
 
 / TODO: GEM replace by generic code
 if isNew
@@ -25,13 +26,14 @@ else
 
 span.actions.pull-right
   .dropdown
-    a data-toggle='dropdown'
+    link-to 'pages.new' id
       fa 'plus-square' 'fa-fw'
-    ul.dropdown-menu.dropdown-menu-right
-      li
-        a.create{ action "create" this bubbles=false} href="#" Category
-      li
-        link-to 'Page' 'pages.new' id
+    / TODO: Uncomment when generic
+      ul.dropdown-menu.dropdown-menu-right
+        li
+          a.create{ action "create" this bubbles=false} href="#" Category
+        li
+          link-to 'Page' 'pages.new' id
 
   unless fixed
     a.down-button{ action "moveDown" this bubbles=false}

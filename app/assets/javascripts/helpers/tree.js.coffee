@@ -2,10 +2,11 @@ Ember.Handlebars.helper 'tree-node-indentation', (node) ->
   depth = node.get('ancestryDepth')
   str = ''
 
-  for i in [1..depth]
-    str += '&nbsp;'
+  for i in [0..depth]
+    str += '&nbsp;&nbsp;'
     
   new Handlebars.SafeString(str)        
+
 
 Ember.Handlebars.helper 'tree-node-title', (item,title) ->
   text = if title

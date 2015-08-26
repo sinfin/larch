@@ -1,4 +1,4 @@
-each child in model itemController='tree_node'
+each child in arrangedContent itemController='tree_node'
   render 'tree-node' child
 
   / unless child.isClosed
