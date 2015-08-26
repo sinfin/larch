@@ -35,10 +35,12 @@ span.actions.pull-right
         li
           link-to 'Page' 'pages.new' id
 
-  unless fixed
-    a.down-button{ action "moveDown" this bubbles=false}
-      fa 'chevron-circle-down' 'fa-fw'
-    a.up-button{ action "moveUp" this bubbles=false}
-      fa 'chevron-circle-up' 'fa-fw'
-    a{ action "remove" this bubbles=false}
+  a.down-button{ action "moveDown" this bubbles=false}
+    fa 'chevron-circle-down' 'fa-fw'
+
+  a.up-button{ action "moveUp" this bubbles=false}
+    fa 'chevron-circle-up' 'fa-fw'
+
+  unless isProtected
+    a{ action "removeNode" this bubbles=false}
       fa 'trash' 'fa-fw'

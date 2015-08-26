@@ -4,30 +4,25 @@ Larch.TreeComponent = Ember.Component.extend
   classNameBindings: [':list-group'],
   closedItems: Larch.CookieSet.create(cookieName: 'tree-closed-items')
 
-  nodes: null      
+  nodes: null
   nodesSorting: ['position']
-  sortedNodes: Ember.computed.sort('nodes','nodesSorting')      
+  sortedNodes: Ember.computed.sort('nodes','nodesSorting')
 
   roots: (->
      @get('sortedNodes').filterBy('ancestryDepth',0)
   ).property('sortedNodes.@each.depth')
 
   actions:
+    removeNode: ->
+      @sendAction 'removeNode'
+      false
+
     moveUp: (item) ->
       @_move(item,up: true)
       false
 
     moveDown: (item) ->
       @_move(item)
-      false
-
-    remove: (item) ->
-      item.deleteRecord()
-      item.save()
-      false
-
-    create: (parent) ->
-      @transitionTo 'menu_items_new',parent.get('id')
       false
 
     changeParent: (item_id,parent_id,position = null) ->
@@ -42,4 +37,3 @@ Larch.TreeComponent = Ember.Component.extend
     @postToServer("/admin/menu_items/#{id}/move", params).then =>
       console.log "Item #{id} moved."
     false
-  
