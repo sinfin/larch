@@ -12,6 +12,8 @@ span{action 'toggleClosed'}
 /  else
   fa 'folder-o'
 
+tree-node-indentation this
+
 / TODO: GEM replace by generic code
 if isNew
   = tree-node-title this treeNodeLabel
