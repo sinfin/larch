@@ -11,20 +11,20 @@ Larch.TreeComponent = Ember.Component.extend
   init: ->
     @_super()
     @ensureProperty('nodes')
-    @ensureProperty('store')        
+    @ensureProperty('store')
     @ensureProperty('removeNode')
     @ensureProperty('serverPath')
 
   ensureProperty: (name) ->
     throw "Missing property '#{name}' for Larch.TreeComponent" if Ember.isEmpty(@get(name))
-          
+
   roots: (->
      @get('sortedNodes').filterBy('ancestryDepth',0)
   ).property('sortedNodes.@each.depth')
 
   actions:
-    removeNode: ->
-      @sendAction 'removeNode'
+    removeNode: (node) ->
+      @sendAction 'removeNode', node
       false
 
     moveUp: (item) ->
@@ -36,7 +36,7 @@ Larch.TreeComponent = Ember.Component.extend
       false
 
     changeParent: (item_id,parent_id,position = null) ->
-      data = { menu_item: { parent_id: parent_id }}
+      data = { parent_id: parent_id }
       path = @get('serverPath')
       @postToServer("#{path}/#{item_id}",data,type: 'PUT').then =>
         console.log "Item #{item_id} changed parent."
